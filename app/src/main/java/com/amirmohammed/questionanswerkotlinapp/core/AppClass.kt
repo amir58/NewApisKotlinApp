@@ -1,4 +1,4 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.core
+package com.amirmohammed.questionanswerkotlinapp.core
 
 import android.app.Application
 import android.content.Context
@@ -11,6 +11,7 @@ class AppClass : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        context = applicationContext
+        context = applicationContext // getApplicationContext();
     }
+
 }

@@ -1,8 +1,8 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.db
+package com.amirmohammed.questionanswerkotlinapp.db
 
 import android.content.Context
 import androidx.room.*
-import com.amirmohammed.questionanswerkotlinapp.ui.models.Article
+import com.amirmohammed.questionanswerkotlinapp.models.Article
 
 @Database(
     entities = [Article::class],
@@ -17,8 +17,11 @@ abstract class ArticleDatabase : RoomDatabase(){
         @Volatile
         private var  instance: ArticleDatabase? = null
 
-        operator fun invoke(context: Context) = instance ?: synchronized(this) {
-            instance ?: createDatabase(context).also{ instance = it}
+        operator fun invoke(context: Context) = instance ?: synchronized(this)
+        {
+            instance ?: createDatabase(context).also{
+                instance = it
+            }
         }
 
         private fun createDatabase(context: Context) = Room.databaseBuilder(
@@ -37,7 +40,6 @@ abstract class ArticleDatabase : RoomDatabase(){
                 }
                 return instance!!
         }
-
 
     }
 

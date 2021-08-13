@@ -1,6 +1,6 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.models
+package com.amirmohammed.questionanswerkotlinapp.models
 
-data class NewsResponce(
+data class NewsResponse(
     val articles: List<Article>,
     val status: String,
     val totalResults: Int

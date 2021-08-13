@@ -1,7 +1,7 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.db
+package com.amirmohammed.questionanswerkotlinapp.db
 
 import androidx.room.TypeConverter
-import com.amirmohammed.questionanswerkotlinapp.ui.models.Source
+import com.amirmohammed.questionanswerkotlinapp.models.Source
 
 
 class Converters {
@@ -11,6 +11,7 @@ class Converters {
         return source.name
     }
 
+    @TypeConverter
     fun toSource(name: String): Source {
         return Source(name, name)
     }

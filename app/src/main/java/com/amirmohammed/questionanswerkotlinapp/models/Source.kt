@@ -1,4 +1,4 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.models
+package com.amirmohammed.questionanswerkotlinapp.models
 
 data class Source(
     val id: Any,

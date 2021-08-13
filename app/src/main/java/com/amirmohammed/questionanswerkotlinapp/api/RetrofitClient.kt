@@ -1,13 +1,15 @@
-package com.amirmohammed.questionanswerkotlinapp.ui.api
+package com.amirmohammed.questionanswerkotlinapp.api
 
-import com.amirmohammed.questionanswerkotlinapp.ui.util.Constants
+import com.amirmohammed.questionanswerkotlinapp.util.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitClient {
-    companion object{
+
+    companion object {
+
         private val retrofit by lazy {
             val logging = HttpLoggingInterceptor()
             logging.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -22,8 +24,8 @@ class RetrofitClient {
                 .build()
         }
 
-        public val api: NewsAPI by lazy {
-            retrofit.create(NewsAPI::class.java)
+        val api: NewsAPI by lazy {
+            retrofit.create(NewsAPI::class.java) // NewsApi.class
         }
 
     }
